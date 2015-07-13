@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>So Cool Timer</title>
+		
+		<style type="text/css">
+		
+			#popup_layer {
+				position: fixed; display: flex; top: 0px; left: 0px; bottom: 0px; width: 280px;
+				background: #3c4b5b; visibility: hidden;
+			}
+			
+			#dpTime {
+				position: fixed; display: flex; top: 150px; left: 500px; bottom: 0px;
+			}
+		</style>
+	
+		<script src="dptime.js"></script>
+		<script src="bgrandom.js"></script>
+		<script type="text/javascript">
+			setInterval("dpTime()", 1000);
+			
+			function layer_popup() {
+		        var layer = document.getElementById("popup_layer");
+		
+		        if (layer.style.visibility == "visible")
+		            layer.style.visibility = "hidden";
+		        else
+		            layer.style.visibility = "visible";
+		    }
+		</script>
+	</head>
+	<body>
+
+		<nav id="setting">
+			<div id="setting_contents">
+				<div id="popup_layer">
+				
+	    			<div id="setting-zone-time"></div>
+	    			
+					<div id="setting-zone-notification"></div>
+					
+					<div id="setting-zone-theme">
+						<!-- <input type="button" value="랜덤하게 색깔바꾸기" onClick="bgrandom()"> -->
+		  	 			<p><input type="button" value="레이어 퇴장하기" onclick="layer_popup()"></p>
+		  	 			<br />
+		  	 			<form name='frm'>
+							사용자 선택 배경색: <select name='a' onchange='fncSetValue();'>
+								<option value='red'>red</option>
+								<option value='blue'>blue</option>
+								<option value='green'>green</option>
+							</select>
+						</form>	
+					</div>
+					
+	    		</div>
+				<p><input type="button" value="레이어 등장하기" onclick="layer_popup()"></p>
+					
+			</div>
+		</nav>
+		
+		<header class=""></header>
+		
+		<div id="page">
+			<div id="page_contents">
+			
+				<div id="time-zone">
+					<div id="dpTime"></div>
+				</div>
+				
+				<div id="date-zone"></div>
+				
+				<div id="location-zone"></div>
+				
+			</div>
+		</div>
+		
+
+	    
+	</body>
+</html>
