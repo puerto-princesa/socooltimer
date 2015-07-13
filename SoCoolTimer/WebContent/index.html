@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="dptime.js"></script>
+<script src="bgrandom.js"></script>
+<title>So Cool Timer</title>
+
+<script type="text/javascript">
+	setInterval("dpTime()", 1000);
+</script>
+</head>
+
+<body>
+	Current time:
+	<div id="dpTime"></div>
+	<input type="button" onClick="bgrandom()" value="랜덤하게 색깔바꾸기" />
+	<form name='frm'>
+		사용자 선택 배경색: <select name='a' onchange='fncSetValue();'>
+			<option value='red'>red</option>
+			<option value='blue'>blue</option>
+			<option value='green'>green</option>
+		</select>
+	</form>
+</body>
+</html>
