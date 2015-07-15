@@ -52,7 +52,9 @@ function fncSetValue() {
 			document.bgColor = '#FF0000';
 		} else if (a.selectedIndex == 1) {
 			document.bgColor = '#3DB7CC';
-		} else
+		} else if (a.selectedIndex == 2) {
 			document.bgColor = '#9FC93C';
+		} else
+			document.bgColor = '#FFFFFF';
 	}
 }
