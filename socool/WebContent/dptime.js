@@ -4,6 +4,10 @@ function dpTime() {
 	hours = now.getHours();
 	minutes = now.getMinutes();
 	seconds = now.getSeconds();
+	year = now.getFullYear();
+	month = now.getMonth() + 1;
+	date = now.getDate();
+	
 
 	if (hours > 12) {
 		hours -= 12;
@@ -22,4 +26,7 @@ function dpTime() {
 	}
 	document.getElementById("dpTime").innerHTML = hours + ":" + minutes
 			+ ":" + seconds + ampm;
+	
+	document.getElementById("dpDate").innerHTML = year + "년" + month
+	+ "월" + date + "일";
 }
