@@ -47,12 +47,12 @@ function bgrandom() { //배경색 바꾸는 함수
 }
 
 function fncSetValue() {
-	with (document.frm) {
-		if (a.selectedIndex == 0) {
+	with (document.change_bgcolor) {
+		if (selected_bgcolor.selectedIndex == 0) {
 			document.bgColor = '#FF0000';
-		} else if (a.selectedIndex == 1) {
+		} else if (selected_bgcolor.selectedIndex == 1) {
 			document.bgColor = '#3DB7CC';
-		} else if (a.selectedIndex == 2) {
+		} else if (selected_bgcolor.selectedIndex == 2) {
 			document.bgColor = '#9FC93C';
 		} else
 			document.bgColor = '#FFFFFF';

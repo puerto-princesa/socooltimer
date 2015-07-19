@@ -2,113 +2,79 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>So Cool Timer</title>
-
-<style type="text/css">
-#popup_layer {
-	position: fixed;
-	display: flex;
-	top: 0px;
-	left: 0px;
-	bottom: 0px;
-	width: 280px;
-	visibility: visible;
-	border: 1px solid gray;
-}
-
-#dpTime {
-	margin: auto;
-	width: 800px;
-	font-size: 150px;
-	text-align: center;
-}
-
-#dpDate {
-	margin: auto;
-	width: 800px;
-	font-size: 80px;
-	text-align: center;
-}
-
-
-
-#settings-contents {
-	margin: auto;
-	width: 240px;
-}
-</style>
-
-<script src="dptime.js"></script>
-<script src="bgrandom.js"></script>
-<script type="text/javascript">
-	setInterval("dpTime()", 1000);
-
-	function layer_popup() {
-		var layer = document.getElementById("popup_layer");
-
-		if (layer.style.visibility == "visible")
-			layer.style.visibility = "hidden";
-		else
-			layer.style.visibility = "visible";
-	}
-</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>So Cool Timer</title>
+	
+	<link type="text/css" href="style.css" rel="stylesheet" />
+	
+	<script src="dptime.js"></script>
+	<script src="bgrandom.js"></script>
+	<script type="text/javascript">
+		setInterval("dpTime()", 1000);
+	
+		function layer_popup() {
+			var layer = document.getElementById("side-popup-layer");
+	
+			if (layer.style.visibility == "visible")
+				layer.style.visibility = "hidden";
+			else
+				layer.style.visibility = "visible";
+		}
+	</script>
 </head>
 <body>
-	<div id="settings">
-		<!-- <p><input type="button" value="레이어 등장하기" onclick="layer_popup()"></p> -->
-		<div id="popup_layer">
-			<div id="settings-contents">
-				<!-- <p><input type="button" value="레이어 퇴장하기" onclick="layer_popup()"></p> -->
-				<div id="settings-contents-time">
+	<header>
+		<button onclick="layer_popup()">Settings</button>
+	</header>
+	
+	<div id="side">
+		<div id="side-popup-layer">
+		
+			<ul>
+				<li>
 					<fieldset>
-						<legend>Time</legend>
-						<form action="" method="POST">
-							시간 표시<br /> <input type="radio"> 24시간 <input type="radio"
-								checked="checked"> 12시간 <br /> <input type="submit"
-								value="확인"> <br />
-						</form>
+					<legend>Time</legend>
+					<form action="" method="POST">
+						시간 표시 <input type="submit" value="확인"> <br />
+						<input type="radio">24시간 <input type="radio" checked="checked">12시간 <br />
+					</form>
 					</fieldset>
-				</div>
-
-				<div id="settings-contents-notification"></div>
-
-				<div id="settings-contents-theme">
+				</li>
+				
+				<li>
 					<fieldset>
-						<legend>Theme</legend>
-						<form name='frm'>
-							사용자 선택 배경색: <select name='a' onchange='fncSetValue();'>
-								<option value='red'>red</option>
-								<option value='blue'>blue</option>
-								<option value='green'>green</option>
-								<option value='white' selected="selected">white</option>
-							</select>
-						</form>
+					<legend>Notification</legend>
 					</fieldset>
-				</div>
-			</div>
+				</li>
+				
+				<li>
+					<fieldset>
+					<legend>Theme</legend>
+					<form name='change_bgcolor'>
+						배경색 선택 <select name='selected_bgcolor' onchange='fncSetValue();'>
+							<option value='red'>red</option>
+							<option value='blue'>blue</option>
+							<option value='green'>green</option>
+							<option value='white' selected="selected">white</option>
+						</select>
+					</form>
+					</fieldset>
+				</li>
+			</ul>
+		
 		</div>
-	</div>
-
-
-
-	<header class=""></header>
-
-	<div id="page">
-		<div id="page-contents">
-
-			<div id="page-contents-time">
-				<div id="dpTime"></div>
-			</div>
-
-			<div id="page-contents-date">
-				<div id="dpDate"></div>
-			</div>
-
-			<div id="page-contents-location"></div>
-
+	</div><!-- side-menu div close -->
+	
+	<article>	
+		<div id="contents-time-date">
+			<div id="display-Time"></div>
+			<div id="display-Date"></div>
 		</div>
-	</div>
+		<div id="contents-alarm"></div>
+		<div id="contents-location"></div>		
+	</article>
 
+	<footer>
+	</footer>
 </body>
 </html>

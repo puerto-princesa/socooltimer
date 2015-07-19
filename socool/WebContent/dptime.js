@@ -24,9 +24,9 @@ function dpTime() {
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	document.getElementById("dpTime").innerHTML = hours + ":" + minutes
+	document.getElementById("display-Time").innerHTML = hours + ":" + minutes
 			+ ":" + seconds + ampm;
 	
-	document.getElementById("dpDate").innerHTML = year + "년" + month
+	document.getElementById("display-Date").innerHTML = year + "년" + month
 	+ "월" + date + "일";
 }
